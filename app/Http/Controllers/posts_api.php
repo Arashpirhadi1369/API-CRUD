@@ -37,8 +37,8 @@ class posts_api extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'description' => 'required',
+            'title' => 'required|max:255',
+            'description' => 'required|max:255',
         ]);
 
         $user = auth()->user();
@@ -74,6 +74,11 @@ class posts_api extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'title' => 'required|max:255',
+            'description' => 'required|max:255',
+        ]);
+        
         $user = auth()->user();
 
         $post = post::findorfail($id);

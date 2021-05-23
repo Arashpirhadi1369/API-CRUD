@@ -1,5 +1,5 @@
 this application accept API(CRUD) with laratrust permissions.
-Author is Arash Pirhadi.
+author : Arash Pirhadi.
 
 for install
 
